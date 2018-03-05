@@ -4,8 +4,13 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
 interface Post {
-  title: string;
-  content: string;
+  firstname: string;
+  lastname: string;
+  phone: number;
+  mobile: number;
+  email: string;
+  address: string;
+
 }
 interface PostId extends Post {
   id: string;
@@ -21,8 +26,12 @@ export class AppComponent {
   postsCol: AngularFirestoreCollection<Post>;
   posts: any;
 
-  title:string;
-  content:string;
+  firstname: string;
+  lastname: string;
+  phone: number;
+  mobile: number;
+  email: string;
+  address: string;
 
   postDoc: AngularFirestoreDocument<Post>;
   post: Observable<Post>;
@@ -32,7 +41,7 @@ export class AppComponent {
   }
 
   ngOnInit() {
-    this.postsCol = this.afs.collection('posts');
+    this.postsCol = this.afs.collection('list');
     //this.posts = this.postsCol.valueChanges();
     this.posts = this.postsCol.snapshotChanges()
       .map(actions => {
@@ -45,15 +54,15 @@ export class AppComponent {
   }
 
   addPost() {
-    this.afs.collection('posts').add({'title': this.title, 'content': this.content});
+    this.afs.collection('list').add({'firstname': this.firstname, 'lastname': this.lastname, 'phone': this.phone, 'mobile': this.mobile, 'email': this.email, 'address': this.address});
   }
 
   getPost(postId) {
-    this.postDoc = this.afs.doc('posts/'+postId);
+    this.postDoc = this.afs.doc('list/'+postId);
     this.post = this.postDoc.valueChanges();
   }
 
   deletePost(postId) {
-    this.afs.doc('posts/'+postId).delete();
+    this.afs.doc('list/'+postId).delete();
   }
 }

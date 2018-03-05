@@ -9,10 +9,10 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { FormsModule } from '@angular/forms';
 
 var firebaseConfig = {
-  apiKey: "",
+  apiKey: "AIzaSyA7kiS6OhaYajw4_0apUdwheKjX3ku_9s0",
   authDomain: "",
   databaseURL: "",
-  projectId: "",
+  projectId: "contactlist-cb594",
   storageBucket: "",
   messagingSenderId: ""
 };
