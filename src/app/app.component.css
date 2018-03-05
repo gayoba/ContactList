@@ -1,3 +1,29 @@
+div.container {
+  max-width: 750px;
+  margin: auto;
+  border: 3px solid white;
+}
+
+div.container1  {
+  max-width: 750px;
+  margin-top: 30px;
+  margin: auto;
+  border: 3px solid white;
+}
+
+input[type='submit'] {
+  background-color:#ffcc00;
+  cursor:pointer;
+  color:#000;
+  font-weight:bold;
+  margin-bottom:50px;
+  height:34px;
+  width:250px;
+    margin:0 auto;
+    margin-left:250px;
+    float:left;
+  
+}
 input[type='submit'] {
   background-color:#ffcc00;
   cursor:pointer;
@@ -12,5 +38,31 @@ input,label {
   display:block;
   float:left;
   margin:5px;
-  
+}
+
+input[type=text] {
+  background-color: rgb(36, 32, 32);
+    color: white;
+    width:250px;
+    height: 30px;
+  border-bottom: 2px solid  grey;
+  border: none;
+}
+
+input[type=number] {
+  background-color: rgb(36, 32, 32);
+  width:250px;
+  height: 30px;
+    color: white;
+  border-bottom: 2px solid  grey;
+  border: none;
+}
+
+input[type=email] {
+  background-color: rgb(36, 32, 32);
+  width:250px;
+  height: 30px;
+    color: white;
+  border-bottom: 2px solid grey;
+  border: none;
 }

@@ -1,46 +1,59 @@
-<div class="row">
-    <h3 class="col-sm-offset-3 col-sm-6">Contact Information</h3>
+<div class="container">
+    <h1>Contact Information</h1>
+    <form>
+      <div class="form-inline">
+          <label> First Name: </label>
+          <input class="form-control" type="text" [(ngModel)]="firstname" name="firstname" placeholder="Enter Firstname" >
+      <label> Last Name: </label>
+      <input class="form-control" type="text" [(ngModel)]="lastname" name="lastname" placeholder="Enter Lastname" > 
+    </div><br>
+      <br>
+      <br>
+      <div class="form-inline">
+      <label> Phone: </label>
+      <input class="form-control" type="number" [(ngModel)]="phone" name="phone" placeholder="Enter Phone Number" style="margin-left:32px; margin-bottom:10px" >
+      <label style="margin-left:32px"> Mobile: </label>
+      <input class="form-control" type="number" [(ngModel)]="mobile" name="mobile" placeholder="Enter Contact Number" style="margin-left:32px; margin-bottom:10px"> 
+      </div><br>
+      <br>
+      <br>
+      <div class="form-group">
+      <label> E-mail: </label>
+      <input class="form-control" type="email" [(ngModel)]="email" name="email" placeholder="Enter E-mail" style="margin-left:32px; margin-bottom:10px">
+    <br>
+      <br>
+      <br>
+      <label> Address: </label>
+      <input class="form-control" type="text" [(ngModel)]="address" name="address" placeholder="Enter Address" style="margin-left:32px; margin-bottom:10px">
+      <br>
+     <br>
+     <br>
+     <input type="submit" value="Submit" (click)="addPost()" >
+    </div>
+    </form>
 </div>
 
-<label> First Name: </label>
-<input type="text" [(ngModel)]="firstname" name="firstname" placeholder="Enter Firstname" style="margin-bottom:10px" >
-<label> Last Name: </label>
-<input type="text" [(ngModel)]="lastname" name="lastname" placeholder="Enter Lastname" > 
 <br>
 <br>
-<br>
-<label> Phone: </label>
-<input type="number" [(ngModel)]="phone" name="phone" placeholder="Enter Phone Number" style="margin-left:32px; margin-bottom:10px">
-<label style="margin-left:32px"> Mobile: </label>
-<input type="number" [(ngModel)]="mobile" name="mobile" placeholder="Enter Contact Number" style="margin-left:20px"> 
-<br>
-<br>
-<br>
-<label> E-mail: </label>
-<input type="email" [(ngModel)]="email" name="email" placeholder="Enter E-mail" style="margin-left:32px; margin-bottom:10px" > 
-<br>
-<br>
-<br>
-<label> Address: </label>
-<input type="text" [(ngModel)]="address" name="address" placeholder="Enter Address" style="margin-left:20px; margin-bottom:10px" >
-<br>
-<br>
-<br>
-<input type="submit" value="Submit" (click)="addPost()">
-<br>
-<br>
-<br>
+
+<div class="container1">
+  <br>
+  <br>
+  <h3>Contact List</h3>
 <ul *ngFor="let post of posts | async">
     <li (click)="getPost(post.id)">
       <strong>{{ post.data.firstname }} {{ post.data.lastname }} (<a href="#" (click)="deletePost(post.id)">delete</a>)</strong>
       <br>
       {{ post.data.phone }}
+      <br>
       {{ post.data.mobile }}
+      <br>
       {{ post.data.email }}
+      <br>  
       {{ post.data.address }}
     </li>
   </ul>
-  
+</div>
   <h1>Contact Details:</h1>
   
   <h3>{{ (post | async)?.firstname }}</h3>
@@ -49,4 +62,3 @@
   <h3>{{ (post | async)?.mobile}}</h3>
   <h3>{{ (post | async)?.email}}</h3>
   <h3>{{ (post | async)?.address}}</h3>
-  

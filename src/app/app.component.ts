@@ -55,6 +55,7 @@ export class AppComponent {
 
   addPost() {
     this.afs.collection('list').add({'firstname': this.firstname, 'lastname': this.lastname, 'phone': this.phone, 'mobile': this.mobile, 'email': this.email, 'address': this.address});
+    
   }
 
   getPost(postId) {
