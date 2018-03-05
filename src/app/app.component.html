@@ -32,14 +32,21 @@
 <br>
 <ul *ngFor="let post of posts | async">
     <li (click)="getPost(post.id)">
-      <strong>{{ post.data.title }} (<a href="#" (click)="deletePost(post.id)">delete</a>)</strong>
+      <strong>{{ post.data.firstname }} {{ post.data.lastname }} (<a href="#" (click)="deletePost(post.id)">delete</a>)</strong>
       <br>
-      {{ post.data.content }}
+      {{ post.data.phone }}
+      {{ post.data.mobile }}
+      {{ post.data.email }}
+      {{ post.data.address }}
     </li>
   </ul>
   
-  <h1>A specific post:</h1>
+  <h1>Contact Details:</h1>
   
-  <h3>{{ (post | async)?.title }}</h3>
-  <p>{{ (post | async)?.content }}</p>
+  <h3>{{ (post | async)?.firstname }}</h3>
+  <h3>{{ (post | async)?.lastname}}</h3>
+  <h3>{{ (post | async)?.phone}}</h3>
+  <h3>{{ (post | async)?.mobile}}</h3>
+  <h3>{{ (post | async)?.email}}</h3>
+  <h3>{{ (post | async)?.address}}</h3>
   
